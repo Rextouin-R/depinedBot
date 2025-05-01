@@ -1,6 +1,6 @@
-## DEPONED (🟠🛜 Auto pimg)
+## DEPONED (🛜 Auto pimg)
 * [Auto ping]
-* [Suport multi akun]
+* [Multi akun]
 * [suport proxy]
 <br>
 
