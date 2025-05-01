@@ -13,7 +13,7 @@
 ## Langkah pertama <a name=first-steps-ubuntu-proot></a>
 
 > [!NOTE]
-> install nodejs
+* install nodejs
 > ⚠️ Pengambilan point sangat berpengaruh pada signal dan [PING]().
 
 Package yang perlu di install: 
@@ -40,8 +40,8 @@ npm install
 ```
 nano tokens.txt
 ```
-> Opsional untuk proxy
 > Simpan dengan perintah `CTRL+x+y` (enter)
+* Opsional untuk proxy 
 > Lalu jalankan dengan perintah
 ```
 npm run start
