@@ -16,12 +16,12 @@
 * install nodejs
 > ⚠️ Pengambilan point sangat berpengaruh pada signal dan [PING]().
 
-Package yang perlu di install: 
+> Package yang perlu di install: 
 ```
 apt-get install nodejs
 ```
 
-Cloning repository: 
+> Cloning repository: 
 ```
 https://github.com/Rextouin-R/depinedBot/
 ```
@@ -41,7 +41,10 @@ npm install
 nano tokens.txt
 ```
 > Simpan dengan perintah `CTRL+x+y` (enter)
-* Opsional untuk proxy 
+* Opsional untuk proxy
+```
+nano proxy.txt
+```
 > Lalu jalankan dengan perintah
 ```
 npm run start
