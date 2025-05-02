@@ -18,7 +18,6 @@ const logger = {
 
         const formattedMessage = `${chalk.cyanBright("[ DepinedBot ]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
 
-
         let formattedValue = ` ${chalk.green(value)}`;
         if (level === 'error') {
             formattedValue = ` ${chalk.red(value)}`;
