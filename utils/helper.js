@@ -13,7 +13,7 @@ export async function saveToFile(filename, data) {
         await fs.appendFile(filename, `${data}\n`, 'utf-8');
         log.info(`Data saved to ${filename}`);
     } catch (error) {
-        log.error(`Failed to save data to ${filename}: ${error.message}`);
+        log.error(`Gagal menyimpan data untuk ${filename}: ${error.message}`);
     }
 }
 
@@ -25,7 +25,7 @@ export async function readFile(pathFile) {
             .map(data => data.trim())
             .filter(data => data.length > 0);
     } catch (error) {
-        log.error(`Error reading file: ${error.message}`);
+        log.error(`Kesalahan memeriksa file: ${error.message}`);
         return [];
     }
 }
@@ -38,7 +38,7 @@ export const newAgent = (proxy = null) => {
         } else if (proxy.startsWith('socks4://') || proxy.startsWith('socks5://')) {
             return new SocksProxyAgent(proxy);
         } else {
-            log.warn(`Unsupported proxy type: ${proxy}`);
+            log.warn(`Tidak mensuport type proxy: ${proxy}`);
             return null;
         }
     }
