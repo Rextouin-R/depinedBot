@@ -193,7 +193,7 @@ export const connect = async (token, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('User connected successfully.');
+        log.info('User berhasil terkoneksi.');
         return data;
     } catch (error) {
         log.error(`Error updating connection: ${error.message}`);
