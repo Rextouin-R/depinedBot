@@ -6,6 +6,7 @@ const logger = {
 
         const colors = {
             info: chalk.cyanBright,
+            flat: chalk.white,
             warn: chalk.yellow,
             error: chalk.red,
             success: chalk.blue,
@@ -32,6 +33,7 @@ const logger = {
         console.log(`${formattedMessage}${formattedValue}`);
     },
 
+    flat: () => logger.log('flat',),
     info: (message, value = '') => logger.log('info', message, value),
     warn: (message, value = '') => logger.log('warn', message, value),
     error: (message, value = '') => logger.log('error', message, value),
