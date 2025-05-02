@@ -1,4 +1,3 @@
-
 import randomUseragent from 'random-useragent';
 import log from './logger.js';
 import { newAgent } from './helper.js';
@@ -193,7 +192,7 @@ export const connect = async (token, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('Koneksi user berhasil.');
+        log.info('User connected successfully.');
         return data;
     } catch (error) {
         log.error(`Error updating connection: ${error.message}`);
