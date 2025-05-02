@@ -8,7 +8,7 @@ const main = async () => {
     await delay(3)
     const tokens = await readFile("tokens.txt");
     if (tokens.length === 0) {
-        log.error('Tidak ada token ditemukan di tokens.txt');
+        log.error('Tidak ada token yang ditemukan di tokens.txt');
         return;
     }
     const proxies = await readFile("proxy.txt");
@@ -17,7 +17,7 @@ const main = async () => {
     }
 
     try {
-        log.info(`Memulai program untuk semua akin:`, tokens.length);
+        log.info(`Memulai program untuk semua akun:`, tokens.length);
 
         for (let index = 0; index < tokens.length; index++) {
             const token = tokens[index]
@@ -37,7 +37,7 @@ const main = async () => {
                     log.info(`Hasil ping untuk semua akun ${index + 1}:`, connectRes || { message: 'unknown error' });
 
                     const result = await utils.getEarnings(token, proxy);
-                    log.info(`Hasil pendapatan semua akun ${index + 1}:`, result?.data || { message: 'unknown error' });
+                    log.info(`Hasil pendapatan untuk semua akun ${index + 1}:`, result?.data || { message: 'unknown error' });
                 }, 1000 * 30); // Run every 30 seconds
 
                 setInterval(async () => {
@@ -45,13 +45,13 @@ const main = async () => {
                 }, 1000 * 60 * 60 * 24); // check every 24 hours
 
             } catch (error) {
-                log.error(`Kesalahan memproses akun ${index}: ${error.message}`);
+                log.error(`Kesalahan memproses akun${index}: ${error.message}`);
             }
         };
 
         await Promise.all(accountsProcessing);
     } catch (error) {
-        log.error(`Kesalahan dalam loop utama: ${error.message}`);
+        log.error(`Kesalahan pada loop utama: ${error.message}`);
     }
 };
 
@@ -60,7 +60,7 @@ const checkUserRewards = async (token, proxy) => {
         const response = await utils.getUserRef(token, proxy)
         const { total_unclaimed_points } = response?.data || 0;
         if (total_unclaimed_points > 0) {
-            log.info(`Akun ${index + 1} has ${total_unclaimed_points}Tidak ada point yang di claim, mencoba mengclaimnya...`);
+            log.info(`Account ${index + 1} has ${total_unclaimed_points} unclaimed points, trying to claim it...`);
             const claimResponse = await utils.claimPoints(token, proxy);
             if (claimResponse.code === 200) {
                 log.info(`Akun ${index + 1} Berhasil mengclaim! ${total_unclaimed_points} points`);
