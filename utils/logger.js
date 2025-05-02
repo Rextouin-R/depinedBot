@@ -5,7 +5,6 @@ const logger = {
         const now = new Date().toLocaleString();
 
         const colors = {
-            DEPINED: chalk.white,
             info: chalk.cyanBright,
             warn: chalk.yellow,
             error: chalk.red,
@@ -33,7 +32,6 @@ const logger = {
         console.log(`${formattedMessage}${formattedValue}`);
     },
 
-    DEPINED: (message, value = '') => logger.log('DEPINED', message, value),
     info: (message, value = '') => logger.log('info', message, value),
     warn: (message, value = '') => logger.log('warn', message, value),
     error: (message, value = '') => logger.log('error', message, value),
