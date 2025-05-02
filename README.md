@@ -23,7 +23,7 @@ apt-get install nodejs
 
 > Cloning repository: 
 ```
-https://github.com/Rextouin-R/depinedBot/
+git clone https://github.com/Rextouin-R/depinedBot/
 ```
 ```
 cd depinedBot 
