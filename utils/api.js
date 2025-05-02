@@ -1,7 +1,6 @@
 
 import randomUseragent from 'random-useragent';
 import log from './logger.js';
-import log from './flat.js';
 import { newAgent } from './helper.js';
 
 const userAgent = randomUseragent.getRandom();
