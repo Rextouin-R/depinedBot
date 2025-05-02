@@ -37,7 +37,7 @@ const main = async () => {
                     log.info(`Hasil ping untuk semua akun ${index + 1}:`, connectRes || { message: 'unknown error' });
 
                     const result = await utils.getEarnings(token, proxy);
-                    log.info(`Hasil pendapatan dari semua akun ${index + 1} info:`, { email, verified, current_tier, points_balance });
+                    log.info(`Hasil pendapatan dari semua akun ${index + 1}:`, result?.data || { message: 'unknown error' });
                 }, 1000 * 30); // Run every 30 seconds
 
                 setInterval(async () => {
