@@ -8,7 +8,7 @@ const main = async () => {
     await delay(3)
     const tokens = await readFile("tokens.txt");
     if (tokens.length === 0) {
-        log.error('No tokens found in tokens.txt');
+        log.error('Tidak ada token ditemukan di tokens.txt');
         return;
     }
     const proxies = await readFile("proxy.txt");
