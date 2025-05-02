@@ -13,7 +13,7 @@ const main = async () => {
     }
     const proxies = await readFile("proxy.txt");
     if (proxies.length === 0) {
-        log.warn('Running without proxy...');
+        log.warn('Berjalan tanpa proxy...');
     }
 
     try {
