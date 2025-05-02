@@ -1,42 +1,86 @@
-import chalk from 'chalk';
+import * as utils from './utils/api.js';
+import banner from './utils/banner.js';
+import log from './utils/logger.js';
+import { readFile, delay } from './utils/helper.js'
 
-const logger = {
-    log: (level, message, value = '') => {
-        const now = new Date().toLocaleString();
+const main = async () => {
+    log.info(banner);
+    await delay(3)
+    const tokens = await readFile("tokens.txt");
+    if (tokens.length === 0) {
+        log.error('No tokens found in tokens.txt');
+        return;
+    }
+    const proxies = await readFile("proxy.txt");
+    if (proxies.length === 0) {
+        log.warn('Running without proxy...');
+    }
 
-        const colors = {
-            info: chalk.cyanBright,
-            warn: chalk.yellow,
-            error: chalk.red,
-            success: chalk.blue,
-            debug: chalk.magenta,
+    try {
+        log.info(`Starting Program for all accounts:`, tokens.length);
+
+        for (let index = 0; index < tokens.length; index++) {
+            const token = tokens[index]
+            const proxy = proxies[index % proxies.length] || null;
+            try {
+                const userData = await utils.getUserInfo(token, proxy);
+
+                if (userData?.data) {
+                    const { email, verified, current_tier, points_balance } = userData.data
+                    log.info(`Account ${index + 1} info:`, { email, verified, current_tier, points_balance });
+                }
+
+                await checkUserRewards(token, proxy);
+
+                setInterval(async () => {
+                    const connectRes = await utils.connect(token, proxy);
+                    log.info(`Ping result for account ${index + 1}:`, connectRes || { message: 'unknown error' });
+
+                    const result = await utils.getEarnings(token, proxy);
+                    log.info(`Earnings result for account ${index + 1}:`, result?.data || { message: 'unknown error' });
+                }, 1000 * 30); // Run every 30 seconds
+
+                setInterval(async () => {
+                    await checkUserRewards(token, proxy);
+                }, 1000 * 60 * 60 * 24); // check every 24 hours
+
+            } catch (error) {
+                log.error(`Error processing account ${index}: ${error.message}`);
+            }
         };
 
-        const color = colors[level] || chalk.white;
-        const levelTag = `[ ${level.toUpperCase()} ]`;
-        const timestamp = `[ ${now} ]`;
-
-        const formattedMessage = `${chalk.cyanBright("[ DepinedBot ]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
-
-        let formattedValue = ` ${chalk.green(value)}`;
-        if (level === 'error') {
-            formattedValue = ` ${chalk.red(value)}`;
-        } else if (level === 'warn') {
-            formattedValue = ` ${chalk.yellow(value)}`;
-        }
-        if (typeof value === 'object') {
-            const valueColor = level === 'error' ? chalk.red : chalk.green;
-            formattedValue = ` ${valueColor(JSON.stringify(value))}`;
-        }
-
-        console.log(`${formattedMessage}${formattedValue}`);
-    },
-
-    info: (message, value = '') => logger.log('info', message, value),
-    warn: (message, value = '') => logger.log('warn', message, value),
-    error: (message, value = '') => logger.log('error', message, value),
-    success: (message, value = '') => logger.log('success', message, value),
-    debug: (message, value = '') => logger.log('debug', message, value),
+        await Promise.all(accountsProcessing);
+    } catch (error) {
+        log.error(`Error in main loop: ${error.message}`);
+    }
 };
 
-export default logger;
+const checkUserRewards = async (token, proxy) => {
+    try {
+        const response = await utils.getUserRef(token, proxy)
+        const { total_unclaimed_points } = response?.data || 0;
+        if (total_unclaimed_points > 0) {
+            log.info(`Account ${index + 1} has ${total_unclaimed_points} unclaimed points, trying to claim it...`);
+            const claimResponse = await utils.claimPoints(token, proxy);
+            if (claimResponse.code === 200) {
+                log.info(`Account ${index + 1} claimed successfully! ${total_unclaimed_points} points`);
+            }
+        }
+    } catch (error) {
+        log.error(`Error checking user rewards: ${error.message}`);
+    }
+}
+
+process.on('SIGINT', () => {
+    log.warn(`Process received SIGINT, cleaning up and exiting program...`);
+    process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+    log.warn(`Process received SIGTERM, cleaning up and exiting program...`);
+    process.exit(0);
+});
+
+
+// Run the main function
+main();
