@@ -1,6 +1,7 @@
 import * as utils from './utils/api.js';
 import banner from './utils/banner.js';
 import log from './utils/logger.js';
+import log from './utils/flat.js';
 import { readFile, delay } from './utils/helper.js'
 
 const main = async () => {
