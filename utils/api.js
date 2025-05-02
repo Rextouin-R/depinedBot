@@ -193,6 +193,7 @@ export const connect = async (token, proxy) => {
             agent,
         });
         const data = await response.json();
+        log.info('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
         log.info('Koneksi user berhasil.');
         return data;
     } catch (error) {
