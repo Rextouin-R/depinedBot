@@ -8,16 +8,16 @@ const main = async () => {
     await delay(3)
     const tokens = await readFile("tokens.txt");
     if (tokens.length === 0) {
-        log.error('Tidak ada token di tokens.txt');
+        log.error('No tokens found in tokens.txt');
         return;
     }
     const proxies = await readFile("proxy.txt");
     if (proxies.length === 0) {
-        log.warn('Berjalan dengan proxy...');
+        log.warn('Running without proxy...');
     }
 
     try {
-        log.info(`Memulai Program Untuk Semua akun:`, tokens.length);
+        log.info(`Starting Program for all accounts:`, tokens.length);
 
         for (let index = 0; index < tokens.length; index++) {
             const token = tokens[index]
@@ -27,17 +27,17 @@ const main = async () => {
 
                 if (userData?.data) {
                     const { email, verified, current_tier, points_balance } = userData.data
-                    log.info(`Akun ${index + 1} info:`, { email, verified, current_tier, points_balance });
+                    log.info(`Account ${index + 1} info:`, { email, verified, current_tier, points_balance });
                 }
 
                 await checkUserRewards(token, proxy);
 
                 setInterval(async () => {
                     const connectRes = await utils.connect(token, proxy);
-                    log.info(`Hasil ping untuk akun ${index + 1}:`, connectRes || { message: 'unknown error' });
+                    log.info(`Ping result for account ${index + 1}:`, connectRes || { message: 'unknown error' });
 
                     const result = await utils.getEarnings(token, proxy);
-                    log.info(`Hasil pendapatan untuk akun ${index + 1}:`, result?.data || { message: 'unknown error' });
+                    log.info(`Earnings result for account ${index + 1}:`, result?.data || { message: 'unknown error' });
                 }, 1000 * 30); // Run every 30 seconds
 
                 setInterval(async () => {
@@ -45,13 +45,13 @@ const main = async () => {
                 }, 1000 * 60 * 60 * 24); // check every 24 hours
 
             } catch (error) {
-                log.error(`Kesalahan memproses akun${index}: ${error.message}`);
+                log.error(`Error processing account ${index}: ${error.message}`);
             }
         };
 
         await Promise.all(accountsProcessing);
     } catch (error) {
-        log.error(`Kesalahan dalam loop utama: ${error.message}`);
+        log.error(`Error in main loop: ${error.message}`);
     }
 };
 
@@ -60,24 +60,24 @@ const checkUserRewards = async (token, proxy) => {
         const response = await utils.getUserRef(token, proxy)
         const { total_unclaimed_points } = response?.data || 0;
         if (total_unclaimed_points > 0) {
-            log.info(`Akun ${index + 1} has ${total_unclaimed_points} tidak di claim, coba lagi untuk mengclaim...`);
+            log.info(`Account ${index + 1} has ${total_unclaimed_points} unclaimed points, trying to claim it...`);
             const claimResponse = await utils.claimPoints(token, proxy);
             if (claimResponse.code === 200) {
-                log.info(`Akun ${index + 1} berhasil mengclaim! ${total_unclaimed_points} point`);
+                log.info(`Account ${index + 1} claimed successfully! ${total_unclaimed_points} points`);
             }
         }
     } catch (error) {
-        log.error(`Kesalahan memeriksa reward user: ${error.message}`);
+        log.error(`Error checking user rewards: ${error.message}`);
     }
 }
 
 process.on('SIGINT', () => {
-    log.warn(`Process yang di terima SIGINT, membersihkan dan keluar dari program...`);
+    log.warn(`Process received SIGINT, cleaning up and exiting program...`);
     process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-    log.warn(`Process yang di terima SIGTERM, membersihkan dan keluar dari program...`);
+    log.warn(`Process received SIGTERM, cleaning up and exiting program...`);
     process.exit(0);
 });
 
