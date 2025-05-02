@@ -17,7 +17,9 @@ const logger = {
         const levelTag = `[ ${level.toUpperCase()} ]`;
         const timestamp = `[ ${now} ]`;
 
+        const formattedMessage = `${chalk.cyanBright("[━━━━━━━━━━━━]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
         const formattedMessage = `${chalk.cyanBright("[ DepinedBot ]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
+
 
         let formattedValue = ` ${chalk.green(value)}`;
         if (level === 'error') {
@@ -33,7 +35,6 @@ const logger = {
         console.log(`${formattedMessage}${formattedValue}`);
     },
 
-    flat: () => logger.log('flat',),
     info: (message, value = '') => logger.log('info', message, value),
     warn: (message, value = '') => logger.log('warn', message, value),
     error: (message, value = '') => logger.log('error', message, value),
