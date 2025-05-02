@@ -1,225 +1,86 @@
-import randomUseragent from 'random-useragent';
-import log from './logger.js';
-import { newAgent } from './helper.js';
+import * as utils from './utils/api.js';
+import banner from './utils/banner.js';
+import log from './utils/logger.js';
+import { readFile, delay } from './utils/helper.js'
 
-const userAgent = randomUseragent.getRandom();
-const headers = {
-    'accept': 'application/json',
-    'user-agent': userAgent,
-    Origin: "chrome-extension://pjlappmodaidbdjhmhifbnnmmkkicjoc",
-    "Content-Length": 18,
-};
+const main = async () => {
+    log.info(banner);
+    await delay(3)
+    const tokens = await readFile("tokens.txt");
+    if (tokens.length === 0) {
+        log.error('No tokens found in tokens.txt');
+        return;
+    }
+    const proxies = await readFile("proxy.txt");
+    if (proxies.length === 0) {
+        log.warn('Running without proxy...');
+    }
 
-const fetchWithTimeout = async (url, options = {}, timeout = 60000) => {
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), timeout);
     try {
-        const response = await fetch(url, { ...options, signal: controller.signal });
-        clearTimeout(id);
-        return response;
+        log.info(`Starting Program for all accounts:`, tokens.length);
+
+        for (let index = 0; index < tokens.length; index++) {
+            const token = tokens[index]
+            const proxy = proxies[index % proxies.length] || null;
+            try {
+                const userData = await utils.getUserInfo(token, proxy);
+
+                if (userData?.data) {
+                    const { email, verified, current_tier, points_balance } = userData.data
+                    log.info(`Account ${index + 1} info:`, { email, verified, current_tier, points_balance });
+                }
+
+                await checkUserRewards(token, proxy);
+
+                setInterval(async () => {
+                    const connectRes = await utils.connect(token, proxy);
+                    log.info(`Ping result for account ${index + 1}:`, connectRes || { message: 'unknown error' });
+
+                    const result = await utils.getEarnings(token, proxy);
+                    log.info(`Earnings result for account ${index + 1}:`, result?.data || { message: 'unknown error' });
+                }, 1000 * 30); // Run every 30 seconds
+
+                setInterval(async () => {
+                    await checkUserRewards(token, proxy);
+                }, 1000 * 60 * 60 * 24); // check every 24 hours
+
+            } catch (error) {
+                log.error(`Error processing account ${index}: ${error.message}`);
+            }
+        };
+
+        await Promise.all(accountsProcessing);
     } catch (error) {
-        clearTimeout(id);
-        throw error;
+        log.error(`Error in main loop: ${error.message}`);
     }
 };
 
-export const registerUser = async (email, password, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/user/register';
+const checkUserRewards = async (token, proxy) => {
     try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Content-Type': 'application/json',
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify({ email, password }),
-            agent,
-        });
-        const data = await response.json();
-        log.info('User berhasil registrasi:', data.message);
-        return data;
+        const response = await utils.getUserRef(token, proxy)
+        const { total_unclaimed_points } = response?.data || 0;
+        if (total_unclaimed_points > 0) {
+            log.info(`Account ${index + 1} has ${total_unclaimed_points} unclaimed points, trying to claim it...`);
+            const claimResponse = await utils.claimPoints(token, proxy);
+            if (claimResponse.code === 200) {
+                log.info(`Account ${index + 1} claimed successfully! ${total_unclaimed_points} points`);
+            }
+        }
     } catch (error) {
-        log.error('Kesalahan registrasi user:', error.message || error);
-        return null;
-    }
-};
-
-export const loginUser = async (email, password, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/user/login';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Content-Type': 'application/json',
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify({ email, password }),
-            agent,
-        });
-        const data = await response.json();
-        log.info('User berhasil login:', data.message);
-        return data;
-    } catch (error) {
-        log.error('Kesalahan Login user:', error.message || error);
-        return null;
-    }
-};
-
-export async function getUserInfo(token, proxy) {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/user/details';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'GET',
-            headers: {
-                ...headers,
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            agent,
-        });
-        return await response.json();
-    } catch (error) {
-        log.error('Kesalahan mengambil informasi user:', error.message || error);
-        return null;
+        log.error(`Error checking user rewards: ${error.message}`);
     }
 }
 
-export const createUserProfile = async (token, payload, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/user/profile-creation';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify(payload),
-            agent,
-        });
-        const data = await response.json();
-        log.info('Profile berhasil dibuat:', payload);
-        return data;
-    } catch (error) {
-        log.error('Kesalahan membuat profile:', error.message || error);
-        return null;
-    }
-};
+process.on('SIGINT', () => {
+    log.warn(`Process received SIGINT, cleaning up and exiting program...`);
+    process.exit(0);
+});
 
-export const confirmUserReff = async (token, referral_code, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/access-code/referal';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify({ referral_code }),
-            agent,
-        });
-        const data = await response.json();
-        log.info('konfirmasi refferal user berhasil:', data.message);
-        return data;
-    } catch (error) {
-        log.error('Kesalahan mengkonfirmasi refferal user:', error.message || error);
-        return null;
-    }
-};
+process.on('SIGTERM', () => {
+    log.warn(`Process received SIGTERM, cleaning up and exiting program...`);
+    process.exit(0);
+});
 
-export const getUserRef = async (token, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/referrals/stats';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'GET',
-            headers: {
-                ...headers,
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            agent,
-        });
-        return await response.json();
-    } catch (error) {
-        log.error('Kesalahan memeriksa status refferal:', error.message || error);
-        return null;
-    }
-};
 
-export const getEarnings = async (token, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/stats/epoch-earnings';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'GET',
-            headers: {
-                ...headers,
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            agent,
-        });
-        return await response.json();
-    } catch (error) {
-        log.error('Kesalahan memeriksa pendapatan:', error.message || error);
-        return null;
-    }
-};
-
-export const connect = async (token, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/user/widget-connect';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify({ connected: true }),
-            agent,
-        });
-        const data = await response.json();
-        log.flat('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-        log.info('User berhasil terkoneksi.');
-        return data;
-    } catch (error) {
-        log.error(`Kesalahan update komeksi: ${error.message}`);
-        return null;
-    }
-};
-
-export const claimPoints = async (token, proxy) => {
-    const agent = newAgent(proxy);
-    const url = 'https://api.depined.org/api/referrals/claim_points';
-    try {
-        const response = await fetchWithTimeout(url, {
-            method: 'POST',
-            headers: {
-                ...headers,
-                'Authorization': `Bearer ${token}`,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: JSON.stringify({}),
-            agent,
-        });
-        const data = await response.json();
-        log.info('Point berhasil diclaim.');
-        return data;
-    } catch (error) {
-        log.error(`Kesalahan mengclaim point: ${error.message}`);
-        return null;
-    }
-};
+// Run the main function
+main();
