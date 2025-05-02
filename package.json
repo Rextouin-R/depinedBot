@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "auto ping node and auto register",
   "main": "main.js",
-  "author": "zlkcyber",
+  "author": "Rextouin-R",
   "license": "MIT",
   "scripts": {
     "start": "node main.js",
