@@ -1,4 +1,4 @@
-## DEPONED (🛜 Auto pimg)
+## DEPINED (🛜 Auto ping)
 * [Auto ping]
 * [Multi akun]
 * [suport proxy]
