@@ -17,7 +17,7 @@ const logger = {
         const levelTag = `[ ${level.toUpperCase()} ]`;
         const timestamp = `[ ${now} ]`;
 
-        const formattedMessage = `${chalk.white("[ DepinedBot ]")}`;
+        
         const formattedMessage = `${chalk.cyanBright("[ DepinedBot ]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
 
         let formattedValue = ` ${chalk.green(value)}`;
