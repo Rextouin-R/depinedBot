@@ -38,10 +38,10 @@ export const registerUser = async (email, password, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('User registered successfully:', data.message);
+        log.info('User berhasil registrasi:', data.message);
         return data;
     } catch (error) {
-        log.error('Error registering user:', error.message || error);
+        log.error('Kesalahan registrasi user:', error.message || error);
         return null;
     }
 };
@@ -61,10 +61,10 @@ export const loginUser = async (email, password, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('User Login successfully:', data.message);
+        log.info('User berhasil login:', data.message);
         return data;
     } catch (error) {
-        log.error('Error Login user:', error.message || error);
+        log.error('Kesalahan Login user:', error.message || error);
         return null;
     }
 };
@@ -84,7 +84,7 @@ export async function getUserInfo(token, proxy) {
         });
         return await response.json();
     } catch (error) {
-        log.error('Error fetching user info:', error.message || error);
+        log.error('Kesalahan mengambil informasi user:', error.message || error);
         return null;
     }
 }
@@ -105,10 +105,10 @@ export const createUserProfile = async (token, payload, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('Profile created successfully:', payload);
+        log.info('Profile berhasil dibuat:', payload);
         return data;
     } catch (error) {
-        log.error('Error creating profile:', error.message || error);
+        log.error('Kesalahan membuat profile:', error.message || error);
         return null;
     }
 };
@@ -129,10 +129,10 @@ export const confirmUserReff = async (token, referral_code, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('Confirm User referral successfully:', data.message);
+        log.info('konfirmasi refferal user berhasil:', data.message);
         return data;
     } catch (error) {
-        log.error('Error Confirm User referral:', error.message || error);
+        log.error('Kesalahan mengkonfirmasi refferal user:', error.message || error);
         return null;
     }
 };
@@ -152,7 +152,7 @@ export const getUserRef = async (token, proxy) => {
         });
         return await response.json();
     } catch (error) {
-        log.error('Error fetching referral stats:', error.message || error);
+        log.error('Kesalahan memeriksa status refferal:', error.message || error);
         return null;
     }
 };
@@ -172,7 +172,7 @@ export const getEarnings = async (token, proxy) => {
         });
         return await response.json();
     } catch (error) {
-        log.error('Error fetching earnings:', error.message || error);
+        log.error('Kesalahan memeriksa pendapatan:', error.message || error);
         return null;
     }
 };
@@ -192,10 +192,10 @@ export const connect = async (token, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('User connected successfully.');
+        log.info('User berhasil terkoneksi.');
         return data;
     } catch (error) {
-        log.error(`Error updating connection: ${error.message}`);
+        log.error(`Kesalahan update komeksi: ${error.message}`);
         return null;
     }
 };
@@ -215,10 +215,10 @@ export const claimPoints = async (token, proxy) => {
             agent,
         });
         const data = await response.json();
-        log.info('Points claimed successfully.');
+        log.info('Point berhasil diclaim.');
         return data;
     } catch (error) {
-        log.error(`Error claiming points: ${error.message}`);
+        log.error(`Kesalahan mengclaim point: ${error.message}`);
         return null;
     }
 };
