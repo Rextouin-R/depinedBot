@@ -6,7 +6,6 @@ const logger = {
 
         const colors = {
             info: chalk.cyanBright,
-            strip: chalk.white,
             warn: chalk.yellow,
             error: chalk.red,
             success: chalk.blue,
@@ -17,7 +16,6 @@ const logger = {
         const levelTag = `[ ${level.toUpperCase()} ]`;
         const timestamp = `[ ${now} ]`;
 
-        
         const formattedMessage = `${chalk.cyanBright("[ DepinedBot ]")} ${chalk.grey(timestamp)} ${color(levelTag)} ${message}`;
 
         let formattedValue = ` ${chalk.green(value)}`;
@@ -35,7 +33,6 @@ const logger = {
     },
 
     info: (message, value = '') => logger.log('info', message, value),
-    strip: (message, value = '') => logger.log('strip', message, value),
     warn: (message, value = '') => logger.log('warn', message, value),
     error: (message, value = '') => logger.log('error', message, value),
     success: (message, value = '') => logger.log('success', message, value),
