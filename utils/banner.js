@@ -10,13 +10,13 @@ const Colors = {
   RESET: "\x1b[0m"
 };
 
-const banner = `${Colors.Teal}
-         .....                  .....        ${Colors.Blue}
-     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    ${Colors.Green}
-   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  ${Colors.Gold}
+const banner = `
+         .....                  .....       
+     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    
+   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  
   ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
  .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
- :NMMMO.          .;OWWWWMXd'         '0MWMX: ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞
+ :NMMMO.          .;OWWWWMXd'         '0MWMX: ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞${Colors.Gold}
  :NMMMO'        .,xXMMMMNO:.          '0MWMX: █▀█ █ █▀▄ █▄▀ █▀▄ █▄█ █▀▀ ${Colors.Gold}
  .OWMMWk,..   .;xXWMWWKkl.,lol,.    .;OWMMWk.┏━┓ ┏━┓         ┏━┓ ╔═╗             ╔═╗ ┏━┓__            ┏━┓${Colors.Green}
   ,OWWWMNOxoox0NMWWWKo'..'OWWMN0xoodONMWWWk' ┃ ┃ ┃ ┃ ┏━╻━━━┓ ┃ ┃ ┏━┓ ┏━╻━━╻━━━━┓ ┏━┓ ┃ ┏━┛  ┏━━━━╮ ╭━━╹ ┃${Colors.Blue}
