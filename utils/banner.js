@@ -1,4 +1,4 @@
-const Colors = `
+const Colors = {
   Gold: "\x1b[38;5;220m",
   Red: "\x1b[31m",
   Teal: "\x1b[38;5;51m",
@@ -8,7 +8,7 @@ const Colors = `
   Magenta: "\x1b[95m",
   Dim: "\x1b[2m",
   RESET: "\x1b[0m"
-    `
+};
 
 const banner = `
    ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞
