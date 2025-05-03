@@ -10,11 +10,11 @@ const Colors = {
   RESET: "\x1b[0m"
 };
 
-const banner = `
-         .....                  .....        ${Colors.Teal}
-     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    ${Colors.Blue}
-   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  ${Colors.Green}
-  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' ${Colors.Gold}
+const banner = `${Colors.Teal}
+         .....                  .....        ${Colors.Blue}
+     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    ${Colors.Green}
+   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  ${Colors.Gold}
+  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
  .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
  :NMMMO.          .;OWWWWMXd'         '0MWMX: ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞
  :NMMMO'        .,xXMMMMNO:.          '0MWMX: █▀█ █ █▀▄ █▄▀ █▀▄ █▄█ █▀▀ ${Colors.Gold}
