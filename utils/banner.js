@@ -29,4 +29,3 @@ const banner = `
     \n${Colors.Green}${'―'.repeat(50)}
                  `
 export default banner;
-export default Colors;
