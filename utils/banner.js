@@ -11,12 +11,26 @@ const Colors = {
 };
 
 const banner = `
-  8
-924853732
-8
-8
-iStock
-Credit: PeterPal
-8
+         .....                  .....        
+     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    
+   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  
+  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
+ .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
+ :NMMMO.          .;OWWWWMXd'         '0MWMX: ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞
+ :NMMMO'        .,xXMMMMNO:.          '0MWMX: █▀█ █ █▀▄ █▄▀ █▀▄ █▄█ █▀▀ ${Colors.Gold}
+ .OWMMWk,..   .;xXWMWWKkl.,lol,.    .;OWMMWk.┏━┓ ┏━┓         ┏━┓ ╔═╗             ╔═╗ ┏━┓__            ┏━┓${Colors.Green}
+  ,OWWWMNOxoox0NMWWWKo'..'OWWMN0xoodONMWWWk' ┃ ┃ ┃ ┃ ┏━╻━━━┓ ┃ ┃ ┏━┓ ┏━╻━━╻━━━━┓ ┏━┓ ┃ ┏━┛  ┏━━━━╮ ╭━━╹ ┃${Colors.Blue}
+   .l0WMMMMMMWMMMNOl.    .cONWMMMWMMMMMW0l.  ┃ ┗━┛ ┃ ┃ ┏━┓ ┃ ┃ ┃ ┃ ┃ ┃ ┏━┓ ┏━┓ ┃ ┃ ┃ ┃ ┗━━┓ ┃ ┏━━┛ ┃ ━━ ┃${Colors.Teal}
+     .;ok0KXK0Odl,.        .,lxO0KKKOxo;.    ┗━━━ ━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━━━━┛ ┗━━━━┛ ╰━━━━┛
+         .....                  .....        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Colors.Teal}{${Colors.Neon}Rextouin${Colors.Teal}}${Colors.RESET}
+\n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}
+\n${Colors.Green}${'―'.repeat(50)}
+\n${Colors.Gold}[+]${Colors.RESET} JOIN : ${Colors.Teal}==> 🟦 join channel : https://t.me/UNLXairdop
+\n${Colors.Gold}[+]${Colors.RESET} FOLLOW : ${Colors.Teal}==> ⬛ github : https://github.com/Rextouin-R/
+\n${Colors.Green}${'―'.repeat(50)}
+\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}NODEGO Extension${Colors.Neon} v1.1.4${Colors.Blue} } ${Colors.RESET}
+\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}BOT${Colors.Neon} v1.0.0${Colors.Blue} } ${Colors.RESET}
+\n${Colors.Green}${'―'.repeat(50)}
+
                  `
 export default banner;
