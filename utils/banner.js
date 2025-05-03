@@ -11,10 +11,10 @@ const Colors = {
 };
 
 const banner = `
-         .....                  .....        
-     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    
-   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  
-  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
+         .....                  .....        ${Colors.Teal}
+     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    ${Colors.Blue}
+   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  ${Colors.Green}
+  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' ${Colors.Gold}
  .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
  :NMMMO.          .;OWWWWMXd'         '0MWMX: ▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞
  :NMMMO'        .,xXMMMMNO:.          '0MWMX: █▀█ █ █▀▄ █▄▀ █▀▄ █▄█ █▀▀ ${Colors.Gold}
