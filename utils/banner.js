@@ -49,15 +49,15 @@ const banner = `
                                                    'lOWMMMW0l,:o;. .,kNW0c.     oWMMMMMMMMMMMMMMMMMMMMMK;     .oKWNx,.  ,lc,:OWMMMWKo,.                                                                 
                                                      .;kNMMMWWWMW0OKNMMK:      :XMMMMMMMMMMMMMMMMMMMMMMMO.      :KMMN0kONMWWWMMMW0c.                                                                    
                                                         :0WXxOWMMMMMMMMWK,    '0MMMMMMMMMMMMMMMMMMMMMMMMWx.    ,0WMMMMMMMMW0xKWKl.                                                                      
-\n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}                                            .,. ;KMMMMMMMMMWk:'..xWMMMMMMMMMMMMMMMMMMMMMMMMMNd...;kWMMMMMMMMMX: .,.                                                                        
-\n${Colors.Green}${'―'.repeat(60)}                            .cdOOOXWMMMMWNKKWMMMMMMMMMMMMMMMMMMMMMMMMMMMN00NWMMMMWX000xl'                                                                             
-\n${Colors.Gold}[+]${Colors.RESET} JOIN : ${Colors.Teal}==> 🟦 join channel : https://t.me/UNLXairdop.;lx0NWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKko:..                                                                                  
-\n${Colors.Gold}[+]${Colors.RESET} FOLLOW : ${Colors.Teal}==> ⬛ github : https://github.com/Rextouin-R/..cKMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0:'.                                                                                       
-\n${Colors.Green}${'―'.repeat(60)}                                       .oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                                                                         
-\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}NODEGO Extension${Colors.Neon} v1.1.4${Colors.Blue} } ${Colors.RESET}.dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                                                                        
-\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}BOT${Colors.Neon} v1.0.0${Colors.Blue} } ${Colors.RESET}.dKOxo0WNOdlOWKdxXMXk0MNkoONKxooOXWKddOKO,                                                                                       
-\n${Colors.Green}${'―'.repeat(60)}                                     .'.  .;c'  .;;.  ;d, .oc.  ,:;.  .::.  .'.                    
-         
+                                                         .,. ;KMMMMMMMMMWk:'..xWMMMMMMMMMMMMMMMMMMMMMMMMMNd...;kWMMMMMMMMMX: .,.                                                                        
+                                                              .cdOOOXWMMMMWNKKWMMMMMMMMMMMMMMMMMMMMMMMMMMMN00NWMMMMWX000xl'                                                                             
+╔═══╦══╦═══╦═══╦═══╗╔═══╦═══╗                                       .;lx0NWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKko:..                                                                                  
+║╔═╗╠╣╠╣╔═╗╠╗╔╗║╔═╗║║╔═╗║╔═╗║                                            ..cKMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0:'.                                                                                       
+║║─║║║║║╚═╝║║║║║╚═╝║║║─║║╚═╝║                                             .oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                                                                         
+║╚═╝║║║║╔╗╔╝║║║║╔╗╔╝║║─║║╔══╝                                           ..dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                                                                        
+║╔═╗╠╣╠╣║║╚╦╝╚╝║║║╚╗║╚═╝║║───                                           .dKOxo0WNOdlOWKdxXMXk0MNkoONKxooOXWKddOKO,                                                                                       
+╚╝─╚╩══╩╝╚═╩═══╩╝╚═╝╚═══╩╝───                                          .'.  .;c'  .;;.  ;d, .oc.  ,:;.  .::.  .'.                    
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━         
                  
                  `
 export default banner;
