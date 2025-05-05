@@ -23,7 +23,7 @@ const banner = `
           '',OWMMMMMMNkl:'  .      .xNMMMMMMMMMMMMMMMMXo.   .O0:.';codo;         ,l,    l0OkKKkdo'  ,l:.                          
           :d''xWMMMMMMMXc .o0c       oWMMMMMMMMMMMMMMX:    .xWMWNNWKd;.  'cc;;. .cc.   ,cld0WMMWMx. 'oxllxko:'.                   
             .',xNMMMMMMMXkdcok,.,,.  '0MMMMMMMMMMMMMMk.    '0MMWNWW0:    .''''.  ....',:'  .dKNWWK, .cKWMMMMMNKOx,                
-             .:clKWMMMMMMMWc . .lc.   'lldOOxddOXMWXO,     :NMMkoOXMX:       .dx:.c00KKKk;  :KMMMWKxkXMMMMMMMMMMMo                
+             .:clKWMMMMMMMWc . .lc.   'lldOOxddOXMWXO,     :NMMkoOXMX:       .dx:.c00KKKk;  :KMMMWKxkXMMMMMMMMMMMo ${Colors.RESET};            
                . .cONMMMMMK,                    'c;.       .lXMd.,dNMKl.      ,:' .''..;do.  'l;;oOXNWMMMMMMMMMMWl                
                     ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
                       'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
