@@ -26,9 +26,9 @@ const banner = `
              .:clKWMMMMMMMWc . .lc.   'lldOOxddOXMWXO,     :NMMkoOXMX:       .dx:.c00KKKk;  :KMMMWKxkXMMMMMMMMMMMo             
                . .cONMMMMMK,                    'c;.       .lXMd.,dNMKl.      ,:' .''..;do.  'l;;oOXNWMMMMMMMMMMWl                
                     ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
-                      'dxdl'.'''..                          ,dd,     .                           :d.                   .oNMMMMWc                
-${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.         .    .dx.                    .xMMMMNc
-${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc. .;,   .. .  .ol.     .oXMMMMWc
+                      'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
+${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.         .    .dx.                            .xMMMMNc
+${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc. .;,   .. .  .ol.                           .oXMMMMWc
                        ▄▀▄   █   █▀▀▄   █▀▄   █▀▀▄   ▄▀▄   █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..       ;kOkdlxXl                
                        █▀█   █   █▐█▀   █░█   █▐█▀   █░█   █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:. 
                        ▀░▀   ▀   ▀░▀▀   ▀▀░   ▀░▀▀   ░▀░   ▀░░             .cxOd'      c0Kx;
