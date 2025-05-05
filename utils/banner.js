@@ -28,7 +28,7 @@ const banner = `
                     ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
                       'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
 ${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.                                          .    .dx.      .xMMMMNc
-${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc.                           .;,   .. .  .ol.    ..      .oXMMMMWc                
+${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc.                           .;,   .. .  .ol.    ..      .oXMMMMWc
                        ▄▀▄ █ █▀▀▄ █▀▄ █▀▀▄ ▄▀▄ █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..   .. ;c.             ;kOkdlxXl                
                        █▀█ █ █▐█▀ █░█ █▐█▀ █░█ █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:.                               ..                
                        ▀░▀ ▀ ▀░▀▀ ▀▀░ ▀░▀▀ ░▀░ ▀░░             .cxOd'      c0Kx;                                                      
