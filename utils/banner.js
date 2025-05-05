@@ -32,15 +32,15 @@ ${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █�
                        ▄▀▄ █ █▀▀▄ █▀▄ █▀▀▄ ▄▀▄ █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..   .. ;c.             ;kOkdlxXl                
                        █▀█ █ █▐█▀ █░█ █▐█▀ █░█ █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:.                               ..                
                        ▀░▀ ▀ ▀░▀▀ ▀▀░ ▀░▀▀ ░▀░ ▀░░             .cxOd'      c0Kx;                                                      
-                                                                 .'.      .'.   
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${colors.Teal}{${colors.Neon}Rextouin${colors.Teal}}${colors.reset}
-\n${colors.reset}FLOW3 Bot ${colors.Blue}{ ${colors.Neon}JS${colors.Blue} }${colors.reset}
-\n${colors.Green}${'―'.repeat(60)}
-\n${colors.Gold}[+]${colors.reset} JOIN : ${colors.Teal}==> 🟦 join channel : https://t.me/UNLXairdop
-\n${colors.Gold}[+]${colors.reset} FOLLOW : ${colors.Teal}==> ⬛ github : https://github.com/Rextouin-R/
-\n${colors.Green}${'―'.repeat(60)}
-\n${colors.Gold}]-> ${colors.Blue}{ ${colors.reset}FLOW3 Extension${colors.Neon} v1.1.4${colors.Blue} } ${colors.reset}
-\n${colors.Gold}]-> ${colors.Blue}{ ${colors.reset}BOT${colors.Neon} v1.0.0${colors.Blue} } ${colors.reset}
-\n${colors.Green}${'―'.repeat(60)}
+                                                                 .'.      .'. 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Colors.Teal}{${Colors.Neon}Rextouin${Colors.Teal}}${Colors.RESET};
+\n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}
+\n${Colors.Green}${'―'.repeat(60)}
+\n${Colors.Gold}[+]${Colors.RESET} JOIN : ${Colors.Teal}==> 🟦 join channel : https://t.me/UNLXairdop
+\n${Colors.Gold}[+]${Colors.RESET} FOLLOW : ${Colors.Teal}==> ⬛ github : https://github.com/Rextouin-R/
+\n${Colors.Green}${'―'.repeat(60)}
+\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}NODEGO Extension${Colors.Neon} v1.1.4${Colors.Blue} } ${Colors.RESET}
+\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}BOT${Colors.Neon} v1.0.0${Colors.Blue} } ${Colors.RESET}
+\n${Colors.Green}${'―'.repeat(60)}
                  `
 export default banner;
