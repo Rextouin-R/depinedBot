@@ -27,11 +27,11 @@ const banner = `
                . .cONMMMMMK,                    'c;.       .lXMd.,dNMKl.      ,:' .''..;do.  'l;;oOXNWMMMMMMMMMMWl                
                     ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
                       'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
-${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.                                          .    .dx.      .xMMMMNc
-${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc.                           .;,   .. .  .ol.    ..      .oXMMMMWc
-                       ▄▀▄   █   █▀▀▄   █▀▄   █▀▀▄   ▄▀▄   █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..   .. ;c.             ;kOkdlxXl                
-                       █▀█   █   █▐█▀   █░█   █▐█▀   █░█   █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:.                               ..                
-                       ▀░▀   ▀   ▀░▀▀   ▀▀░   ▀░▀▀   ░▀░   ▀░░             .cxOd'      c0Kx;                                                      
+${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.         .    .dx.      .xMMMMNc
+${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc. .;,   .. .  .ol.     .oXMMMMWc
+                       ▄▀▄   █   █▀▀▄   █▀▄   █▀▀▄   ▄▀▄   █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..       ;kOkdlxXl                
+                       █▀█   █   █▐█▀   █░█   █▐█▀   █░█   █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:. 
+                       ▀░▀   ▀   ▀░▀▀   ▀▀░   ▀░▀▀   ░▀░   ▀░░             .cxOd'      c0Kx;
                                                                  .'.      .'. 
 \n${Colors.Teal}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Colors.Teal}{${Colors.Neon}Rextouin${Colors.Teal}}${Colors.RESET};
 \n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}
