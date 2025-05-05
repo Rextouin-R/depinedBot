@@ -11,25 +11,56 @@ const Colors = {
 };
 
 const banner = `
-        .....                  .....       
-     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    
-   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  
-  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
- .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
- :NMMMO.          .;OWWWWMXd'▄▀█ █ █▀█ █▀▄ █▀█ █▀█ █▀█ ∞${Colors.Gold}
- :NMMMO'        .,xXMMMMNO:. █▀█ █ █▀▄ █▄▀ █▀▄ █▄█ █▀▀ ${Colors.Gold}
- .OWMMWk,..   .;xXWMWWKkl.,l┏━┓ ┏━┓   ,kWMMW┏━┓ ╔═╗             ╔═╗ ┏━┓__            ┏━┓${Colors.Green}
-  ,OWWWMNOxoox0NMWWWKo'..'OW┃ ┃ ┃ ┃ ┏━╻━━━┓ ┃ ┃ ┏━┓ ┏━╻━━╻━━━━┓ ┏━┓ ┃ ┏━┛  ┏━━━━╮ ╭━━╹ ┃${Colors.Blue}
-   .l0WMMMMMMWMMMNOl.    .cO┃ ┗━┛ ┃ ┃ ┏━┓ ┃ ┃ ┃ ┃ ┃ ┃ ┏━┓ ┏━┓ ┃ ┃ ┃ ┃ ┗━━┓ ┃ ┏━━┛ ┃ ━━ ┃${Colors.Teal}
-     .;ok0KXK0Odl,.        l┗━━━ ━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━━━━┛ ┗━━━━┛ ╰━━━━┛
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Colors.Teal}{${Colors.Neon}Rextouin${Colors.Teal}}${Colors.RESET}
-\n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}
-\n${Colors.Green}${'―'.repeat(60)}
-\n${Colors.Gold}[+]${Colors.RESET} JOIN : ${Colors.Teal}==> 🟦 join channel : https://t.me/UNLXairdop
-\n${Colors.Gold}[+]${Colors.RESET} FOLLOW : ${Colors.Teal}==> ⬛ github : https://github.com/Rextouin-R/
-\n${Colors.Green}${'―'.repeat(60)}
-\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}NODEGO Extension${Colors.Neon} v1.1.4${Colors.Blue} } ${Colors.RESET}
-\n${Colors.Gold}]-> ${Colors.Blue}{ ${Colors.RESET}BOT${Colors.Neon} v1.0.0${Colors.Blue} } ${Colors.RESET}
-\n${Colors.Green}${'―'.repeat(60)}
+      .,:cloooooooolllccccc:::;,,'''....                                                          
+      'xXWMMMMMMMMMMMMMMMMMMMMMMMWWWNNNXK0OOkxdoc;,'.                                               
+      oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKko:.                                           
+     .xMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXkl'                                        
+     .kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXx,                                      
+     '0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXl.                                    
+     ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0'                                    
+     cWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                    
+     oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                    
+     dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                    
+    .kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;                                    
+    '0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                    
+    ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                    
+    :NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK,                                    
+    oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                    
+    dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX;                                    
+   .kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWc                                    
+   ,0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWo                                    
+   lWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMx.                                   
+  .OMMWNNXK0000OOOOOOkkkO0KXNWWNX0xooooooooodKWMMMMMMMMMMMMMMMMk.                                   
+   ,c:,'.....      .,cdk0KXNWWMWWXk:.        '0MMMMMMMMMMMMMMMMK,                                   
+                  ;ONMMMMMMWNXKOkddo:.        ,0MMMMMMMMMMMWMWKx,..                                 
+  .,:lolc.       .kMMMWXOolc:;..               ,KMMMMMMMMWMW0xkOxc.                                 
+  oWNkdxO;        lXWKl,,;lx0K0kl;.             lNMMMMMWk:lc:kdc0Nk'                                
+  :o,  .,;.       .,xx.,odlxWMMKOOk:            '0MMMMWx..'.:c..:0MO'                               
+    .:oxXWKo'       cXx:dl .lkOd;.';.            l0KNKx' :d:, .olcXK,                               
+    o0;lNMMMk.      oW0;.  .cdc.                   ...   .:dKkkNx,kk.                               
+    :x'.lOKx,      .xXo.    .'.                           ':lKMMx;xc                                
+    .:.  ..         od.                                   ,kk0WKc:c.                                
+    ..              ,:.                                  .dXO:'....                                 
+                                                         'xd.   .'                                  
+                      .';.                                     .dc                                  
+          ..          .;kO;                             .lo,. .kNc                                  
+         .l;      ...   .kXl.                            ;xxc..OWc                                  
+          lx..'. .o0k;..:k0Kk,                                 cNd.                                 
+          .xc.,.  ..''',;' 'd0d'                          .    ;XX:                                 
+       ..  ,'                .cx;                        ..    lKOl.                                
+       .'.                     .c.                      .,.   ,kc;,                                 
+        .;.    .. .:lc;'..                          .;okd'   .o:..                                  
+         .;.  :OxxXMMMMNK0Okdol;.                 .;ONNx.   .c,.'.                                  
+          .:. :Okoc:cccoOKko:,''.               ,kXNNk;     ..':.                                   
+           .;'       .,cc,                    'dKWMWo.       ;l.                                    
+            .,.    ';ldxo;                 .,cloONMk.  .;;..co.                                     
+              '.                         ..'..,kWWNo.:dd; .od.                                      
+               .                            .oXMMWWXXKc. 'xd.                                       
+                                   .      .lKWMMMMMXd.  ;Oo.                                        
+                   ',''',;:::::;'...    ,oKWMMMWKo:'   lOc                                          
+                   .:dk0KXK0OONK:   .,lONMMMMNOc.    .dO;                                           
+                      .''''. .oXO:,:xKXNXNXX0c.      o0;                                            
+
+
                  `
 export default banner;
