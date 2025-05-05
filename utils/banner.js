@@ -11,28 +11,17 @@ const Colors = {
 };
 
 const banner = `
-                                                   .;:;. ${Colors.Red};
- .,.                                               ,OWMWKd:.                                                                      
- ;KXOkxc.                                       .:xXMMMMMMNd.                                                                     
-  .dXMMW0;                                    :OXWMMMMMMKd:.                                                                      
-    'lOWMNk:.                              .:kNMMMMMMMMWl                                                                         
-      .kWMMWKx:..                       'x0XWMMMMMMMMMMM0;                       .'c,                                             
-       .c0WMMMWN0d:.               ,kkodKMMMMMMMMMMMMMMMMXd.    ...       ':.   .k0Oc                                             
-         .kWMMMMMMWKd'             dMMMMMMMMMMMMMMMMMMMW0xx;  :x0NKOkxdddk0o.   :XWNc                                             
-          .dXMMMMMMMM0'.c:        .xMMMMMMMMMMMMMMMMMMMK,    :kc;::;;;clc:.     .k0c'  .:c' ..                                    
-          '',OWMMMMMMNkl:'  .      .xNMMMMMMMMMMMMMMMMXo.   .O0:.';codo;         ,l,    l0OkKKkdo'  ,l:.                          
-          :d''xWMMMMMMMXc .o0c       oWMMMMMMMMMMMMMMX:    .xWMWNNWKd;.  'cc;;. .cc.   ,cld0WMMWMx. 'oxllxko:'.                   
-            .',xNMMMMMMMXkdcok,.,,.  '0MMMMMMMMMMMMMMk.    '0MMWNWW0:    .''''.  ....',:'  .dKNWWK, .cKWMMMMMNKOx, ${Colors.RESET};               
-             .:clKWMMMMMMMWc . .lc.   'lldOOxddOXMWXO,     :NMMkoOXMX:       .dx:.c00KKKk;  :KMMMWKxkXMMMMMMMMMMMo             
-               . .cONMMMMMK,                    'c;.       .lXMd.,dNMKl.      ,:' .''..;do.  'l;;oOXNWMMMMMMMMMMWl                
-                    ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
-                      'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
-${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.         .    .dx.                                  .xMMMMNc
-${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc. .;,   .. .  .ol.                                 .oXMMMMWc
-                       ▄▀▄   █   █▀▀▄   █▀▄   █▀▀▄   ▄▀▄   █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..       ;kOkdlxXl                
-                       █▀█   █   █▐█▀   █░█   █▐█▀   █░█   █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:. 
-                       ▀░▀   ▀   ▀░▀▀   ▀▀░   ▀░▀▀   ░▀░   ▀░░             .cxOd'      c0Kx;
-                                                                 .'.      .'. 
+        .....                  .....       
+     .:ok0XXXKOxl,.        .,lxOKXXK0ko;.    
+   .lKWWMMMMMMMMMNO:     'o0NMMMMMMMMMWW0l.  
+  ,OWMMMXkdlox0NMMWk. ':dXWMMMNOdoodONWWMWO' 
+ .OMMMWx,     .,loc..lKWWMMWKo,.     ,kWMMWk.
+ :NMMMO.          .;OWWWWMXd'█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀ ∞${Colors.Gold}
+ :NMMMO'        .,xXMMMMNO:. █▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█ ${Colors.Gold}
+ .OWMMWk,..   .;xXWMWWKkl.,l┏━┓ ┏━┓   ,kWMMW┏━┓ ╔═╗             ╔═╗ ┏━┓__            ┏━┓${Colors.Green}
+  ,OWWWMNOxoox0NMWWWKo'..'OW┃ ┃ ┃ ┃ ┏━╻━━━┓ ┃ ┃ ┏━┓ ┏━╻━━╻━━━━┓ ┏━┓ ┃ ┏━┛  ┏━━━━╮ ╭━━╹ ┃${Colors.Blue}
+   .l0WMMMMMMWMMMNOl.    .cO┃ ┗━┛ ┃ ┃ ┏━┓ ┃ ┃ ┃ ┃ ┃ ┃ ┏━┓ ┏━┓ ┃ ┃ ┃ ┃ ┗━━┓ ┃ ┏━━┛ ┃ ━━ ┃${Colors.Teal}
+     .;ok0KXK0Odl,.        l┗━━━ ━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━━━━┛ ┗━━━━┛ ╰━━━━┛
 \n${Colors.Teal}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Colors.Teal}{${Colors.Neon}Rextouin${Colors.Teal}}${Colors.RESET};
 \n${Colors.RESET}NODEGO Bot ${Colors.Blue}{ ${Colors.Neon}JS${Colors.Blue} }${Colors.RESET}
 \n${Colors.Green}${'―'.repeat(60)}
