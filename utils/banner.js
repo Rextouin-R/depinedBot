@@ -11,7 +11,7 @@ const Colors = {
 };
 
 const banner = `
-                                                   .;:;.                                                                         
+                                                   .;:;. $(Colors.red);                                                                        
  .,.                                               ,OWMWKd:.                                                                      
  ;KXOkxc.                                       .:xXMMMMMMNd.                                                                     
   .dXMMW0;                                    :OXWMMMMMMKd:.                                                                      
