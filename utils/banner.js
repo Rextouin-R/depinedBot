@@ -27,8 +27,8 @@ const banner = `
                . .cONMMMMMK,                    'c;.       .lXMd.,dNMKl.      ,:' .''..;do.  'l;;oOXNWMMMMMMMMMMWl                
                     ;xNMMMK,                                ;XWo  .l0Kx.                          ..';coxKWMMMMMWl                
                       'dxdl'.'''..                          ,dd,     .                           :d.     .oNMMMMWc                
-█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀ .l0NWWNKxc,'.,cc:,'..'.                                          .    .dx.      .xMMMMNc                
-█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█  .'ckO0XNNNNNNWMMWNOooc.                           .;,   .. .  .ol.    ..      .oXMMMMWc                
+${Colors.Red};█▀█ █▀▀ █▀█ █░█ █▄▄ █░ █ █▄▀${Colors.RESET}; .l0NWWNKxc,'.,cc:,'..'.                                          .    .dx.      .xMMMMNc                
+${Colors.Red};█▀▄ ██▄ █▀▀ █▄█ █▄█ █▄ █ █░█${Colors.RESET};  .'ckO0XNNNNNNWMMWNOooc.                           .;,   .. .  .ol.    ..      .oXMMMMWc                
                        ▄▀▄ █ █▀▀▄ █▀▄ █▀▀▄ ▄▀▄ █▀▄KXo;okl.,lol,..clc::::;:;'.,;:x0x,..   .. ;c.             ;kOkdlxXl                
                        █▀█ █ █▐█▀ █░█ █▐█▀ █░█ █▄█.;'.':'.colcc:lxooooc:,..':dOkdl:.                               ..                
                        ▀░▀ ▀ ▀░▀▀ ▀▀░ ▀░▀▀ ░▀░ ▀░░             .cxOd'      c0Kx;                                                      
